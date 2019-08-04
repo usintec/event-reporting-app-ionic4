@@ -5,5 +5,24 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-list *ngFor="let event of eventList; let i = index">
+          <ion-item-sliding>
+            <ion-item>
+              <ion-icon slot="start" name="add"></ion-icon>
+              <ion-label>{{i + 1}} {{event.event_name}} {{event.create_at}}</ion-label>
+            </ion-item>
+            <ion-item-options>
+              <ion-item-option>
+                <ion-button (click)="">Detail</ion-button>
+              </ion-item-option>
+              <ion-item-option (click)="">Edit</ion-item-option>
+            </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

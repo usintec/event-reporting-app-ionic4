@@ -48,7 +48,7 @@ export class RegisterEventPage implements OnInit {
           this.message(data.message);
           this.eventForm.reset();
         }else {
-          this.message("Operation Failed.Please try again");
+          this.message("Empty Data Returned");
         }
       },
       error => {

@@ -17,18 +17,18 @@ import { AuthMonithoringService } from './service/auth-monithoring.service';
 export class AppComponent {
   public role: string;
   public isAuthenticated: boolean = false;
-  public appPages = [
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    }
-  ];
+  // public appPages = [
+  //   {
+  //     title: 'Home',
+  //     url: '/home',
+  //     icon: 'home'
+  //   },
+  //   {
+  //     title: 'List',
+  //     url: '/list',
+  //     icon: 'list'
+  //   }
+  // ];
 
   constructor(
     private platform: Platform,
@@ -70,7 +70,7 @@ export class AppComponent {
           console.log("done");
           this.isAuthenticated = false;
           this.role = '';
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/register-event');
         }
       });
       
