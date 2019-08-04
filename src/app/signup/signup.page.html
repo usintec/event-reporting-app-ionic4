@@ -1,0 +1,70 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="9" offset-md="1.5">
+          <div  class="loader" *ngIf="isLoading">
+              <ion-spinner color="primary" class="load"></ion-spinner>
+          </div>
+        <form [formGroup]="userForm" (ngSubmit)="registerUser()">
+          <ion-item>
+            <ion-label position="floating">Surname</ion-label>
+            <ion-input type="text" formControlName="surname"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Othername</ion-label>
+            <ion-input type="text" formControlName="othername"></ion-input>
+          </ion-item>
+            <ion-radio-group formControlName="gender">
+              <ion-list-header>
+                <ion-label>Gender</ion-label>
+              </ion-list-header>
+              <ion-item>
+                <ion-label>Male</ion-label>
+                <ion-radio slot="start" value="Male" checked></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Female</ion-label>
+                <ion-radio slot="start" value="Female"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="text" formControlName="password"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label type="floating">State</ion-label>
+              <ion-select formControlName="state">
+                <ion-select-option value="KWARA">KWARA</ion-select-option>
+                <ion-select-option value="LAGOS">LAGOS</ion-select-option>
+                <ion-select-option value="OTHERS">OTHERS</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label type="floating">Phone No</ion-label>
+              <ion-input type="text" formControlName="phone_no"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label type="floating">Adddress</ion-label>
+              <ion-textarea autoGrow="true" formControlName="address"></ion-textarea>
+            </ion-item>
+            <ion-button
+              expand="block"
+              color="primary"
+              [disabled]="!userForm.valid">
+              <ion-icon slot="start" name="person"></ion-icon>
+              Register</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

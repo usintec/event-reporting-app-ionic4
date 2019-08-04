@@ -57,7 +57,7 @@ export class EventService {
     return this.http.post<any>(this.authService.getDomain() + 'register-event/', 
     event).pipe(map((response) =>response));
   }
-  fetchEventsByName(eventName: string, pageNo: number){
+  fetchEventsByEventName(eventName: string, pageNo: number){
     return this.http.get<any>(this.authService.getDomain() + 
         'get-event-by-name/' + eventName + '?page=' + pageNo ).pipe(map((response) =>response));
   }

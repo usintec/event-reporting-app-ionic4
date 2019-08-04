@@ -1,0 +1,12 @@
+.loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color:  #488aff;
+    opacity: .75;
+    z-index: 9999999;
+}
+ion-spinner * {
+    width: 55px !important;
+    height: 55px !important;
+}
