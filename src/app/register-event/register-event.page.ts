@@ -41,7 +41,7 @@ export class RegisterEventPage implements OnInit {
     let formData = this.eventForm.value;
     this.isLoading = true;
     this.eventService.storeEvent(new Event('',formData.reporter_name,
-      formData.event_name,formData.loacation,formData.description,this.userId))
+      formData.event_name,formData.loacation,formData.description,this.userId,''))
       .subscribe((data) => {
         this.isLoading = false;
         if(data.success){

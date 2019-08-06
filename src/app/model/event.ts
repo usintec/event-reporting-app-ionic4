@@ -6,7 +6,8 @@ export class Event {
         public event_name: string,
         public location: string,
         public description: string,
-        public user_id: string
+        public user_id: string,
+        public image_url: string
     ){
     }
 }
