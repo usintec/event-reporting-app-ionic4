@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Storage } from '@ionic/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +16,12 @@ export class UserService {
   constructor(
     private http: HttpClient, 
     private authService: AuthService,
-    private nativeStorage: NativeStorage) { }
+    private nativeStorage: Storage) { }
   setUserStorage(){
-    return this.nativeStorage.setItem('user', this.activeUser);
+    return this.nativeStorage.set('user', this.activeUser);
 }
 getUserStorage(){
-    return this.nativeStorage.getItem('user');
+    return this.nativeStorage.get('user');
 }
     setActiveUser(user: User){
         this.activeUser = user;

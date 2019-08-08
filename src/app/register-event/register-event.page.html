@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
     <ion-title>register-event</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +14,7 @@
           <div  class="loader" *ngIf="isLoading">
               <ion-spinner color="primary" class="load"></ion-spinner>
           </div>
-        <form [formGroup]="eventForm" (click)="RegisterEvent()">
+        <form [formGroup]="eventForm" (ngSubmit)="registerEvent()">
           <ion-item>
             <ion-label position="floating">Reporter Name</ion-label>
             <ion-input type="text" formControlName="reporter_name"></ion-input>
@@ -29,6 +32,7 @@
             <ion-textarea autoGrow="true" formControlName="description"></ion-textarea>
           </ion-item>
           <ion-button
+            type="submit"
             expand="block"
             color="primary"
             [disabled]="!eventForm.valid">

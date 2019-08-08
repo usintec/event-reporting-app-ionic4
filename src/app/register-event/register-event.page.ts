@@ -27,6 +27,7 @@ export class RegisterEventPage implements OnInit {
     if(this.user){
       this.userId = this.user.id;
     }
+    this.initializeForm()
   }
 
   initializeForm(){
