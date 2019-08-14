@@ -2,14 +2,13 @@
   <ion-split-pane>
     <ion-menu type="overlay">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="secondary">
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <ion-list>
+      <ion-content color="secondary">
           <!-- <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-item class="menuitem" [routerDirection]="'root'" [routerLink]="[p.url]">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
@@ -17,7 +16,7 @@
             </ion-item>
           </ion-menu-toggle> -->
           <ion-menu-toggle auto-hide="false">
-              <ion-item 
+              <ion-item class="menuitem" 
               routerDirection="'root'" 
               [routerLink]="'/register-event'">
               <ion-icon slot="start" name="home"></ion-icon>
@@ -26,7 +25,7 @@
               </ion-label>
             </ion-item>
             <!-- <ion-menu-toggle auto-hide="false"> -->
-                <ion-item 
+                <ion-item class="menuitem" 
                 routerDirection="'root'" 
                 [routerLink]="'/list-event'"
                 *ngIf="role == 'admin' && isAuthenticated">
@@ -35,16 +34,16 @@
                   List Event
                 </ion-label>
               </ion-item>
-              <ion-item 
+              <ion-item class="menuitem" 
               routerDirection="'root'" 
-              [routerLink]="'/sigin'"
+              [routerLink]="'/signin'"
               *ngIf="!isAuthenticated">
               <ion-icon slot="start" name="home"></ion-icon>
               <ion-label>
                 Signin 
               </ion-label>
             </ion-item>
-              <ion-item 
+              <ion-item class="menuitem" 
               routerDirection="'root'" 
               [routerLink]="'/signup'"
               *ngIf="!isAuthenticated">
@@ -53,7 +52,7 @@
                 Signup 
               </ion-label>
             </ion-item>
-            <ion-item 
+            <ion-item class="menuitem" 
               routerDirection="'root'" 
               (click)="logout()"
               *ngIf="isAuthenticated">
@@ -63,7 +62,6 @@
               </ion-label>
             </ion-item>
             </ion-menu-toggle>
-        </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>

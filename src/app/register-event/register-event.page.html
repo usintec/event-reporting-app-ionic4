@@ -1,45 +1,48 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="secondary">
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-    <ion-title>register-event</ion-title>
+    <ion-title>Register Event</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size-md="6" offset-md="3">
-          <div  class="loader" *ngIf="isLoading">
-              <ion-spinner color="primary" class="load"></ion-spinner>
-          </div>
-        <form [formGroup]="eventForm" (ngSubmit)="registerEvent()">
-          <ion-item>
-            <ion-label position="floating">Reporter Name</ion-label>
-            <ion-input type="text" formControlName="reporter_name"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Event Name</ion-label>
-            <ion-input type="text" formControlName="event_name"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Location</ion-label>
-            <ion-input type="text" formControlName="location"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Event Description</ion-label>
-            <ion-textarea autoGrow="true" formControlName="description"></ion-textarea>
-          </ion-item>
-          <ion-button
-            type="submit"
-            expand="block"
-            color="primary"
-            [disabled]="!eventForm.valid">
-            <ion-icon slot="start" name="add"></ion-icon>
-            Submit Event</ion-button>
-        </form>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content color="secondary">
+  <ion-card color="tertiary">
+        <ion-grid>
+            <ion-row>
+              <ion-col size-md="6" offset-md="3">
+                  <div  class="loader" *ngIf="isLoading">
+                      <ion-spinner color="primary" class="load"></ion-spinner>
+                  </div>
+                <form [formGroup]="eventForm" (ngSubmit)="registerEvent()">
+                  <ion-item>
+                    <ion-label position="floating">Reporter Name</ion-label>
+                    <ion-input class="input" type="text" formControlName="reporter_name"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Event Name</ion-label>
+                    <ion-input class="input" type="text" formControlName="event_name"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Location</ion-label>
+                    <ion-input class="input" type="text" formControlName="location"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Event Description</ion-label>
+                    <ion-textarea class="input" autoGrow="true" formControlName="description"></ion-textarea>
+                  </ion-item>
+                  <ion-button
+                    type="submit"
+                    expand="block"
+                    color="primary"
+                    [disabled]="!eventForm.valid">
+                    <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+                    Submit Event</ion-button>
+                </form>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+  </ion-card>
+  
 </ion-content>

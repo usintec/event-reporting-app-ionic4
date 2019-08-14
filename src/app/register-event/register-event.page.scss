@@ -10,3 +10,28 @@ ion-spinner * {
     width: 55px !important;
     height: 55px !important;
 }
+ion-item{
+    --background: #707070;
+    --color: #488aff;
+}
+.input{
+    --color:white;
+}
+ion-card{
+    height: 95%;
+}
+ion-grid{
+    height: 100%;
+}
+ion-col{
+    height: 100%;
+}
+ion-row{
+    height: 100%;
+}
+ion-button{
+    position: absolute;
+    bottom: 10px;
+    display: block;
+    width: 97%;
+}
